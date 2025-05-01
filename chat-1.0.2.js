@@ -144,7 +144,7 @@ background: #4338ca;
       const msg = document.createElement("div");
       msg.className =
         "chat-message " + (from === "user" ? "from-user" : "from-bot");
-      msg.innerHtml = text;
+      msg.textContent = text;
       body.appendChild(msg);
       body.scrollTop = body.scrollHeight;
     }
@@ -175,14 +175,14 @@ background: #4338ca;
             ".chat-message.from-bot:last-child"
           );
           if (loading)
-            loading.innerHtml = data.reply || "Lo siento, hubo un error.";
+            loading.innerHTML = data.reply || "Lo siento, hubo un error.";
         })
         .catch(() => {
           const loading = body.querySelector(
             ".chat-message.from-bot:last-child"
           );
           if (loading)
-            loading.innerHtml = "Error al conectarse al servidor.";
+            loading.innerHTML = "Error al conectarse al servidor.";
         });
     }
 
