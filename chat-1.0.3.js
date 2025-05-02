@@ -159,7 +159,7 @@ background: #4338ca;
       appendMessage("Pensando...", "bot");
 
       // Aquí se enviaría al backend real con la api_key
-      fetch("http://localhost:3001/chat", {
+      fetch("https://agent-web-backend.onrender.com/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
